@@ -465,13 +465,13 @@ class export(delegate.page):
             data = self.get_exports(lst, raw=True)
             web.header("Content-Type", "application/json")
             return delegate.RawText(json.dumps(data))
-        elif format == "yaml": 
+        elif format == "yaml":
             data = self.get_exports(lst, raw=True)
             web.header("Content-Type", "application/yaml")
             return delegate.RawText(formats.dump_yaml(data))
         else:
             raise web.notfound()
-    
+
     def get_exports(self, lst: list, raw: bool = False) -> Dict[str, list]:
         export_data = lst.get_export_list()
         if "editions" in export_data:
