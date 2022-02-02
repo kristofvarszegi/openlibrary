@@ -163,7 +163,7 @@ class ListMixin:
             for k in doc['edition_key']:
                 yield "/books/" + k
 
-    def get_export_list(self)  -> Dict[str, list]:
+    def get_export_list(self)  -> dict[str, list]:
         """Returns all the editions, works and authors of this list in arbitrary order.
 
         The return value is an iterator over all the entries. Each entry is a dictionary.
